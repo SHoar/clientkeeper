@@ -1,0 +1,19 @@
+{
+  "name": "clientkeeper",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "bower": "^1.8.0",
+    "express": "~4.13.4",
+    "mongojs": "*"
+  },
+  "description": "ClientKeeper client management system",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "Sean",
+  "license": "MIT"
+}

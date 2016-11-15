@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>ClientKeeper</title>
+    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" media="screen" title="no title">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">ClientKeeper</a>
+        </div>
+        <!-- <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <table class="table striped">
+        <thead>
+          <tr>
+            <td>
+              <strong>First Name</strong>
+            </td>
+            <td>
+              <strong>Last Name</strong>
+            </td>
+            <td>
+              <strong>Email</strong>
+            </td>
+            <td>
+              <strong>Phone</strong>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" name="first-name" class="form-control" value="">
+            </td>
+            <td>
+              <input type="text" name="last-name" class="form-control" value="">
+            </td>
+            <td>
+              <input type="text" name="email" class="form-control" value="">
+            </td>
+            <td>
+              <input type="text" name="phone" class="form-control" value="">
+            </td>
+            <td>
+              <button id="addBtn" class="btn btn-primary" type="button" name="button">Add</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Jimmy
+            </td>
+            <td>
+              Olsen
+            </td>
+            <td>
+              jimmy.olsen@dailyplanet.com
+            </td>
+            <td>
+              (555)123-5555
+            </td>
+            <td>
+              <button class="btn btn-warning" type="button" name="edit">Edit</button> <button class="btn btn-danger"type="button" name="delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js">
+    </script>
+    <script type="text/javascript" src="/bower_components/angular/angular.js">
+    </script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js">
+    </script>
+  </body>
+</html>
