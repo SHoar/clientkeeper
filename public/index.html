@@ -56,7 +56,8 @@
               <input type="text" ng-model="client.phone" name="phone" class="form-control" value="">
             </td>
             <td>
-              <button id="addBtn" class="btn btn-primary" type="button" name="button" ng-click="addClient()">Add</button>
+              <button id="addBtn" class="btn btn-primary" type="button" name="addButton" ng-click="addClient()">Add</button>
+              <button id="updateBtn" class="btn btn-primary" type="button" name="updateButton" ng-click="updateClient()">Update</button>
             </td>
           </tr>
           <tr ng-repeat="client in clients">
@@ -73,7 +74,7 @@
               {{client.phone}}
             </td>
             <td>
-              <button class="btn btn-warning" type="button" name="edit"> Edit </button> <button class="btn btn-danger" type="button" name="delete"> Delete </button>
+              <button class="btn btn-warning" type="button" name="edit" ng-click="editClient(client._id)"> Edit </button> <button class="btn btn-danger" type="button" name="delete"> Delete </button>
             </td>
           </tr>
         </tbody>

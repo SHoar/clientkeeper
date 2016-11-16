@@ -34,6 +34,35 @@ app.post('/clients', function (req, res) {
     }
   })
 })
+
+app.get('/clients/:id', function (req, res) {
+  var id = req.params.id
+  db.clients.findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+    if (err) {
+      res.send(err)
+    } else {
+      res.json(doc)
+    }
+  })
+})
+
+app.put('/clients/:id', function (req, res){
+  var id = req.params.id;
+
+  db.clients.findAndModify({query: {_id: mongojs.ObjectId(id)},
+    update: {
+        $set: {
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          email: req.body.email,
+          phone: req.body.phone,
+        }},
+        new: true
+      },
+    function(err, doc){
+      res.json(doc)
+    })
+})
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');
