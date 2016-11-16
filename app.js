@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/clients', function (req, res) {
   console.log('Request for clients received...');
-  db.clients.find(function (err, docs){
+  db.clients.find().sort({first_name: 1}, function (err, docs){
     if (err) {
       res.send(err)
     } else {
@@ -23,6 +23,17 @@ app.get('/clients', function (req, res) {
   })
 })
 
+app.post('/clients', function (req, res) {
+  console.log('Adding new client...');
+  db.clients.insert(req.body, function (err, doc){
+    if (err) {
+      res.send(err)
+    } else {
+      console.log('Client added');
+      res.json(doc)
+    }
+  })
+})
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');
