@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp', [])
 
 myApp.controller('AppController', [ '$scope', '$http', '$location', function( $scope, $http, $location){
+
   $http.get('/clients').success(function (response) {
     console.log('Data received from server');
     $scope.clients = response
@@ -21,10 +22,18 @@ myApp.controller('AppController', [ '$scope', '$http', '$location', function( $s
     })
   }
 
-  $scope.updateClient = function () {
+  $scope.updateClient = function (id) {
     $http.put('/clients/'+$scope.client._id, $scope.client).success(function (response) {
       console.log('client update...');
       window.location.href='/'
       })
   }
+
+  $scope.deleteClient = function (id) {
+    $http.delete('/clients/'+id).success(function (response) {
+      console.log('client removed');
+      window.location.href='/'
+    })
+  }
+
 }])

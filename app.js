@@ -63,6 +63,20 @@ app.put('/clients/:id', function (req, res){
       res.json(doc)
     })
 })
+
+app.delete('/clients/:id', function (req, res){
+  var id = req.params.id;
+
+  db.clients.remove({_id: mongojs.ObjectId(id)}, function (err, doc){
+    if (err) {
+      res.send(err)
+    } else {
+      console.log('Client removed');
+      res.json(doc)
+    }
+  })
+})
+
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');
